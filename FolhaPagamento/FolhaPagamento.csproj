@@ -44,17 +44,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\CargoDAO.cs" />
+    <Compile Include="DAL\FuncionarioDAO.cs" />
     <Compile Include="Model\Cargo.cs" />
+    <Compile Include="Model\Funcionario.cs" />
+    <Compile Include="Utils\ValidaCpf.cs" />
     <Compile Include="View\CadastrarCargo.cs" />
+    <Compile Include="View\CadastrarFuncionario.cs" />
+    <Compile Include="View\Menu.cs" />
     <Compile Include="View\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Utils\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
