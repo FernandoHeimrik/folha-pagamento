@@ -10,7 +10,8 @@ namespace FolhaPagamento.View
     {
         static void Main(string[] args)
         {
-
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            Console.ForegroundColor = ConsoleColor.White;
             string op = "";
             do
             {
@@ -31,7 +32,7 @@ namespace FolhaPagamento.View
                 switch (op)
                 {
                     case "1":
-
+                        CadastrarCargo.Renderizar();
                         break;
                     default:
                         break;
