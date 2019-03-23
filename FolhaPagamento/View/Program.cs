@@ -26,7 +26,14 @@ namespace FolhaPagamento.View
                     case "2":
                         CadastrarFuncionario.Renderizar();
                         break;
+                    case "3":
+                        CadastrarFolhaPagamento.Renderizar();
+                        break;
+                    case "4":
+                        ListarFolhaPagamento.Renderizar();
+                        break;
                     default:
+                        Console.WriteLine("Opção Inválida!");
                         break;
                 }
 

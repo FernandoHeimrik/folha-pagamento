@@ -14,16 +14,26 @@ namespace FolhaPagamento.DAL
 
         public static bool cadastrarFuncionario(Funcionario f)
         {
-            foreach (Funcionario funcionariosCadastrados in funcionarios)
+            if(BuscarFuncionarioPorCpf(f.Cpf) != null)
             {
-                if (funcionariosCadastrados.Cpf.Equals(f.Cpf))
-                {
-                    return false;
-                }
+                return false;
             }
             funcionarios.Add(f);
             return true;
         }
+
+        public static Funcionario BuscarFuncionarioPorCpf(string cpf)
+        {
+            foreach (Funcionario funcionariosCadastrados in funcionarios)
+            {
+                if (funcionariosCadastrados.Cpf.Equals(cpf))
+                {
+                    return funcionariosCadastrados;
+                }
+            }
+            return null;
+        }
+
 
         public static List<Funcionario> retornaFuncionarios()
         {

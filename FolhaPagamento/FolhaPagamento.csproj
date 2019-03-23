@@ -45,11 +45,15 @@
   <ItemGroup>
     <Compile Include="DAL\CargoDAO.cs" />
     <Compile Include="DAL\FuncionarioDAO.cs" />
+    <Compile Include="DAL\FolhaDePagamentoDAO.cs" />
     <Compile Include="Model\Cargo.cs" />
+    <Compile Include="Model\FolhaDePagamento.cs" />
     <Compile Include="Model\Funcionario.cs" />
     <Compile Include="Utils\ValidaCpf.cs" />
     <Compile Include="View\CadastrarCargo.cs" />
+    <Compile Include="View\CadastrarFolhaPagamento.cs" />
     <Compile Include="View\CadastrarFuncionario.cs" />
+    <Compile Include="View\ListarFolhaPagamento.cs" />
     <Compile Include="View\Menu.cs" />
     <Compile Include="View\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

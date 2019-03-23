@@ -14,6 +14,7 @@ namespace FolhaPagamento.View
         public static void Renderizar()
         {
             Funcionario f = new Funcionario();
+            Cargo c = new Cargo();
             Console.WriteLine("CADASTRO FUNCIONÁRIO");
             Console.WriteLine("Informe o nome: ");
             f.Nome = Console.ReadLine();
@@ -23,18 +24,29 @@ namespace FolhaPagamento.View
             if (ValidaCpf.ValidarCpf(f.Cpf))
             {
                 Console.WriteLine("Informe a Data de Nascimento: dd/MM/yyyy");
-                f.Nascimento = DateTime.Parse(Console.ReadLine());
-                if (FuncionarioDAO.cadastrarFuncionario(f))
+                f.Nascimento = Convert.ToDateTime(Console.ReadLine());
+                Console.WriteLine("informe o Cargo: ");
+                c.Nome = Console.ReadLine().ToUpper();
+                c = CargoDAO.BuscarCargoPeloNome(c.Nome);
+                if ( c != null)
                 {
-                    Console.WriteLine("Funcionário Cadastrado com Sucesso!");
-                    //foreach (var item in FuncionarioDAO.retornaFuncionarios())
-                    //{
-                    //    Console.WriteLine(item);
-                    //}
+                    f.Cargo = c;
+                    if (FuncionarioDAO.cadastrarFuncionario(f))
+                    {
+                        Console.WriteLine("Funcionário Cadastrado com Sucesso!");
+                        foreach (var item in FuncionarioDAO.retornaFuncionarios())
+                        {
+                            Console.WriteLine(item);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Funcionario já cadastrado!!");
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("Funcionario já cadastrado!!");
+                    Console.WriteLine("Cargo não encontrado");
                 }
             }
             else

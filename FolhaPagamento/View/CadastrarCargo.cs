@@ -16,16 +16,18 @@ namespace FolhaPagamento.View
             Console.WriteLine("CADASTRO DE CARGO");
             Console.WriteLine("Informe o nome: ");
             c.Nome = Console.ReadLine().ToUpper();
+
             Console.WriteLine("Informe o valor do Bonus: ");
+
             c.Bonus = Convert.ToDouble(Console.ReadLine());
 
-            if (CargoDAO.cadastrarCargo(c))
+            if (CargoDAO.CadastrarCargo(c))
             {
                 Console.WriteLine("Cargo cadastrado com sucesso!");
-                //foreach (var item in CargoDAO.retornaCargos())
-                //{
-                //    Console.WriteLine(item);
-                //}
+                foreach (var item in CargoDAO.retornaCargos())
+                {
+                    Console.WriteLine(item);
+                }
             }
             else
             {

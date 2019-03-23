@@ -15,7 +15,7 @@ namespace FolhaPagamento.Model
 
         public override string ToString()
         {
-            return "Nome: " + Nome + " | Valor do Bonus: " + Bonus;
+            return "Nome do Cargo: " + Nome + " | Valor do Bonus: " + Bonus;
         }
     }
 }
