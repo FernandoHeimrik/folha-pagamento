@@ -49,6 +49,7 @@
     <Compile Include="Model\Cargo.cs" />
     <Compile Include="Model\FolhaDePagamento.cs" />
     <Compile Include="Model\Funcionario.cs" />
+    <Compile Include="Utils\Calculos.cs" />
     <Compile Include="Utils\ValidaCpf.cs" />
     <Compile Include="View\CadastrarCargo.cs" />
     <Compile Include="View\CadastrarFolhaPagamento.cs" />

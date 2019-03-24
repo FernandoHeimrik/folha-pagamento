@@ -23,7 +23,7 @@ namespace FolhaPagamento.View
             {
                 fp.Funcionario = f;
                 Console.WriteLine("Informe o Cargo: ");
-                c.Nome = Console.ReadLine();
+                c.Nome = Console.ReadLine().ToUpper();
                 c = CargoDAO.BuscarCargoPeloNome(c.Nome);
                 if ( c != null)
                 {
@@ -36,8 +36,7 @@ namespace FolhaPagamento.View
                     fp.HorasTrabalhadas = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Informe o valor da hora: ");
                     fp.ValorHora = Convert.ToDouble(Console.ReadLine());
-
-                    if (FolhaDePagamentoDAO.cadastrarFolhaDePagamento(fp,fp.Funcionario.Cpf, Convert.ToString(fp.Mes), Convert.ToString(fp.Mes)))
+                    if (FolhaDePagamentoDAO.cadastrarFolhaDePagamento(fp))
                     {
                         Console.WriteLine("Folha de Pagamento Cadastrada");
                     }

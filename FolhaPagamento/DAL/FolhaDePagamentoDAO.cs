@@ -12,18 +12,36 @@ namespace FolhaPagamento.DAL
         public static List<FolhaDePagamento> pagtos = new List<FolhaDePagamento>();
 
 
-        public static bool cadastrarFolhaDePagamento(FolhaDePagamento pgto, string cpf, string mes, string ano)
+        public static bool cadastrarFolhaDePagamento(FolhaDePagamento pgto)
         {
-            foreach (FolhaDePagamento pgtoCadastradas in pagtos)
+            //foreach (FolhaDePagamento pgtoCadastradas in pagtos)
+            //{
+            //    if (pgtoCadastradas.Funcionario.Cpf.Equals(cpf) && pgtoCadastradas.Mes.Equals(mes) && pgtoCadastradas.Ano.Equals(ano))
+            //    {
+            //        return false;
+            //    }
+            //}
+            //pagtos.Add(pgto);
+            //return true;
+            if (ConsultarFolhaDePagamento(pgto.Funcionario.Cpf, pgto.Mes, pgto.Ano) != null)
             {
-                if (pgtoCadastradas.Funcionario.Cpf.Equals(cpf) && pgtoCadastradas.Mes.Equals(mes) && pgtoCadastradas.Ano.Equals(ano)){
-                    return false;
-                }
+                return false;
             }
             pagtos.Add(pgto);
             return true;
         }
 
+        public static FolhaDePagamento ConsultarFolhaDePagamento(string cpf, int mes, int ano)
+        {
+            foreach (FolhaDePagamento pgtoCadastradas in pagtos)
+            {
+                if (pgtoCadastradas.Funcionario.Cpf.Equals(cpf) && pgtoCadastradas.Mes.Equals(mes) && pgtoCadastradas.Ano.Equals(ano))
+                {
+                    return pgtoCadastradas;
+                }
+            }
+            return null;
+        }
 
         public static List<FolhaDePagamento> retornaFolhasDePagamentos()
         {
