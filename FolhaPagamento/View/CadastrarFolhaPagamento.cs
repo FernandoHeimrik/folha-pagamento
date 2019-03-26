@@ -28,13 +28,12 @@ namespace FolhaPagamento.View
                 if ( c != null)
                 {
                     fp.Funcionario.Cargo = c;
-                    Console.WriteLine("informe o Mês: ");
-                    fp.Mes = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("informe o Ano: ");
-                    fp.Ano = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Mes e ano: MM/yyyy");
+                    fp.MesAno = Convert.ToDateTime(Console.ReadLine());
                     Console.WriteLine("informe o numero de Horas Trabalhadas: ");
                     fp.HorasTrabalhadas = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Informe o valor da hora: ");
+
                     fp.ValorHora = Convert.ToDouble(Console.ReadLine());
                     if (FolhaDePagamentoDAO.cadastrarFolhaDePagamento(fp))
                     {

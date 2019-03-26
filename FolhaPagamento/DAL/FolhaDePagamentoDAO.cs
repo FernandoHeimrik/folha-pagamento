@@ -14,16 +14,7 @@ namespace FolhaPagamento.DAL
 
         public static bool cadastrarFolhaDePagamento(FolhaDePagamento pgto)
         {
-            //foreach (FolhaDePagamento pgtoCadastradas in pagtos)
-            //{
-            //    if (pgtoCadastradas.Funcionario.Cpf.Equals(cpf) && pgtoCadastradas.Mes.Equals(mes) && pgtoCadastradas.Ano.Equals(ano))
-            //    {
-            //        return false;
-            //    }
-            //}
-            //pagtos.Add(pgto);
-            //return true;
-            if (ConsultarFolhaDePagamento(pgto.Funcionario.Cpf, pgto.Mes, pgto.Ano) != null)
+            if (ConsultarFolhaDePagamento(pgto.Funcionario.Cpf, pgto.MesAno.Month, pgto.MesAno.Year) != null)
             {
                 return false;
             }
@@ -35,7 +26,7 @@ namespace FolhaPagamento.DAL
         {
             foreach (FolhaDePagamento pgtoCadastradas in pagtos)
             {
-                if (pgtoCadastradas.Funcionario.Cpf.Equals(cpf) && pgtoCadastradas.Mes.Equals(mes) && pgtoCadastradas.Ano.Equals(ano))
+                if (pgtoCadastradas.Funcionario.Cpf.Equals(cpf) && pgtoCadastradas.MesAno.Month.Equals(mes) && pgtoCadastradas.MesAno.Year.Equals(ano))
                 {
                     return pgtoCadastradas;
                 }
