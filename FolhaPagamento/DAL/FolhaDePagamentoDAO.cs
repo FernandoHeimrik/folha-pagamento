@@ -34,6 +34,20 @@ namespace FolhaPagamento.DAL
             return null;
         }
 
+        public static List<FolhaDePagamento> RetornaFolhasDePagementoPorFuncionario(string cpf)
+        {
+            List<FolhaDePagamento> pagtosAux = new List<FolhaDePagamento>();
+
+            foreach (FolhaDePagamento pgtoCadastradas in pagtos)
+            {
+                if (pgtoCadastradas.Funcionario.Cpf.Equals(cpf))
+                {
+                    pagtosAux.Add(pgtoCadastradas);
+                }
+            }
+            return pagtosAux;
+        }
+
         public static List<FolhaDePagamento> retornaFolhasDePagamentos()
         {
             return pagtos;

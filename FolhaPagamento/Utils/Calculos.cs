@@ -64,7 +64,7 @@ namespace FolhaPagamento.Utils
             }
             if (Convert.ToDouble(hrtrabalhadas) * vlhrtrabalhada >= (5645.81))
             {
-                return (Convert.ToDouble(hrtrabalhadas) * vlhrtrabalhada) - 621.03;
+                return  621.03;
             }
             return 0;
         }

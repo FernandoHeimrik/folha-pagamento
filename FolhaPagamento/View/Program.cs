@@ -16,6 +16,7 @@ namespace FolhaPagamento.View
             do
             {
                 Menu.Renderizar();
+
                 op = Console.ReadLine();
                 Console.Clear();
                 switch (op)
@@ -31,6 +32,9 @@ namespace FolhaPagamento.View
                         break;
                     case "4":
                         ListarFolhaPagamento.Renderizar();
+                        break;
+                    case "5":
+                        ListarFolhaPagamentoFuncionario.Renderizar();
                         break;
                     default:
                         Console.WriteLine("Opção Inválida!");

@@ -55,6 +55,7 @@
     <Compile Include="View\CadastrarFolhaPagamento.cs" />
     <Compile Include="View\CadastrarFuncionario.cs" />
     <Compile Include="View\ListarFolhaPagamento.cs" />
+    <Compile Include="View\ListarFolhaPagamentoFuncionario.cs" />
     <Compile Include="View\Menu.cs" />
     <Compile Include="View\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
