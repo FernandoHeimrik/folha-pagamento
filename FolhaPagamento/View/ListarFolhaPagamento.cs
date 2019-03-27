@@ -15,7 +15,7 @@ namespace FolhaPagamento.View
         {
             Funcionario f = new Funcionario();
             FolhaDePagamento fp = new FolhaDePagamento();
-            Console.WriteLine("CONSULTAR FOLHA DE PAGAMENTO");
+            Console.WriteLine("\tCONSULTAR FOLHA DE PAGAMENTO");
             Console.WriteLine("Informe o CPF do funcionário: ");
             f.Cpf = Console.ReadLine();
             f = FuncionarioDAO.BuscarFuncionarioPorCpf(f.Cpf);
@@ -30,6 +30,7 @@ namespace FolhaPagamento.View
                     //Console.WriteLine("Nome do funcionário: " + fp.Funcionario.Nome);
                     //Console.WriteLine("CPF: " + fp.Funcionario.Cpf);
                     //Console.WriteLine("Mês: " + fp.Mes + " Ano: " + fp.Ano);
+                    
                     Console.WriteLine("Salário Bruto: " + Calculos.SalarioBruto(fp.HorasTrabalhadas, fp.ValorHora).ToString("C2"));
                     Console.WriteLine("Imposto de Renda: " + Calculos.ImpostoDeRenda(fp.HorasTrabalhadas, fp.ValorHora).ToString("C2"));
                     Console.WriteLine("INSS: " + Calculos.INSS(fp.HorasTrabalhadas, fp.ValorHora).ToString("C2"));

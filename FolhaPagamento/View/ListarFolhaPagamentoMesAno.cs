@@ -9,20 +9,20 @@ using System.Threading.Tasks;
 
 namespace FolhaPagamento.View
 {
-    class ListarFolhaPagamentoFuncionario
+    class ListarFolhaPagamentoMesAno
     {
         public static void Renderizar()
         {
-            Funcionario f = new Model.Funcionario();
             FolhaDePagamento fp = new FolhaDePagamento();
-            Console.WriteLine("\tCONSULTAR HISTÓRICO DE FOLHAS DE PAGAMENTO DO FUNCIONÁRIO");
-            Console.WriteLine("Informe o CPF do Funcionário: ");
-            f.Cpf = Console.ReadLine();
-            f = FuncionarioDAO.BuscarFuncionarioPorCpf(f.Cpf);
-            if(f != null)
+            Console.WriteLine("\tCONSULTAR HISTÓRICO DE FOLHAS DE PAGAMENTO DO MÊS");
+            Console.WriteLine("informe o mês e ano: ");
+            fp.MesAno = Convert.ToDateTime(Console.ReadLine());
+
+            fp = FolhaDePagamentoDAO.ConsultarFolhaDePagamentoMesAno(fp.MesAno.Month, fp.MesAno.Year);
+            if (fp != null)
             {
                 double total = 0;
-                foreach (FolhaDePagamento pgtosCadastradas in FolhaDePagamentoDAO.RetornaFolhasDePagementoPorFuncionario(f.Cpf))
+                foreach (FolhaDePagamento pgtosCadastradas in FolhaDePagamentoDAO.RetornaFolhasDePamanetoPorMesAno(fp.MesAno.Month, fp.MesAno.Year))
                 {
                     Console.WriteLine("\n");
                     Console.WriteLine("Nome do funcionário: " + pgtosCadastradas.Funcionario.Nome);
@@ -39,11 +39,11 @@ namespace FolhaPagamento.View
                     total += Calculos.SalarioBruto(pgtosCadastradas.HorasTrabalhadas, pgtosCadastradas.ValorHora);
                 }
                 
-                Console.WriteLine("\t\tTotal Salário: " +total.ToString("C2"));
+                Console.WriteLine("\tTotal Salário: " + total.ToString("C2"));
             }
             else
             {
-                Console.WriteLine("Funcionário não encontrado");
+                Console.WriteLine("Nenhum registro encontrado para essa data");
             }
 
         }

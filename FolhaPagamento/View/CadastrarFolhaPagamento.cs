@@ -15,7 +15,7 @@ namespace FolhaPagamento.View
             Funcionario f = new Funcionario();
             Cargo c = new Model.Cargo();
             FolhaDePagamento fp = new FolhaDePagamento();
-            Console.WriteLine("CADASTRO FOLHA DE PAGAMENTO");
+            Console.WriteLine("\tCADASTRO FOLHA DE PAGAMENTO");
             Console.WriteLine("Informe o CPF do funcionario: ");
             f.Cpf = Console.ReadLine();
             f = FuncionarioDAO.BuscarFuncionarioPorCpf(f.Cpf);

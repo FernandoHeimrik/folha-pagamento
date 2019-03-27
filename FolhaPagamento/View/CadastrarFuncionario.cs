@@ -15,7 +15,7 @@ namespace FolhaPagamento.View
         {
             Funcionario f = new Funcionario();
             Cargo c = new Cargo();
-            Console.WriteLine("CADASTRO FUNCIONÁRIO");
+            Console.WriteLine("\tCADASTRO FUNCIONÁRIO");
             Console.WriteLine("Informe o nome: ");
             f.Nome = Console.ReadLine();
             Console.WriteLine("Informe o CPF: ");

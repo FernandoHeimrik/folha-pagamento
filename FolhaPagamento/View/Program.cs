@@ -36,12 +36,15 @@ namespace FolhaPagamento.View
                     case "5":
                         ListarFolhaPagamentoFuncionario.Renderizar();
                         break;
+                    case "6":
+                        ListarFolhaPagamentoMesAno.Renderizar();
+                        break;
                     default:
                         Console.WriteLine("Opção Inválida!");
                         break;
                 }
 
-                Console.WriteLine("Digite uma tecla para continuar..");
+                Console.WriteLine("\nDigite uma tecla para continuar..");
                 Console.ReadKey();
 
             } while (!op.Equals("0"));

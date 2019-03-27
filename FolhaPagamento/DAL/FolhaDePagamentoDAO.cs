@@ -48,6 +48,32 @@ namespace FolhaPagamento.DAL
             return pagtosAux;
         }
 
+        public static FolhaDePagamento ConsultarFolhaDePagamentoMesAno(int mes, int ano)
+        {
+            foreach (FolhaDePagamento pgtoCadastradas in pagtos)
+            {
+                if (pgtoCadastradas.MesAno.Month.Equals(mes) && pgtoCadastradas.MesAno.Year.Equals(ano))
+                {
+                    return pgtoCadastradas;
+                }
+            }
+            return null;
+        }
+
+        public static List<FolhaDePagamento> RetornaFolhasDePamanetoPorMesAno(int mes, int ano)
+        {
+            List<FolhaDePagamento> pagtosAux = new List<FolhaDePagamento>();
+
+            foreach (FolhaDePagamento pgtoCadastradas in pagtos)
+            {
+                if (pgtoCadastradas.MesAno.Month.Equals(mes) && pgtoCadastradas.MesAno.Year.Equals(ano))
+                {
+                    pagtosAux.Add(pgtoCadastradas);
+                }
+            }
+            return pagtosAux;
+        }
+
         public static List<FolhaDePagamento> retornaFolhasDePagamentos()
         {
             return pagtos;

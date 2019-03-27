@@ -13,7 +13,7 @@ namespace FolhaPagamento.View
         public static void Renderizar()
         {
             Cargo c = new Cargo();
-            Console.WriteLine("CADASTRO DE CARGO");
+            Console.WriteLine("\tCADASTRO DE CARGO");
             Console.WriteLine("Informe o nome: ");
             c.Nome = Console.ReadLine().ToUpper();
 
