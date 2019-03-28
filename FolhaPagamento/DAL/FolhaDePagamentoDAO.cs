@@ -45,6 +45,7 @@ namespace FolhaPagamento.DAL
                     pagtosAux.Add(pgtoCadastradas);
                 }
             }
+            pagtosAux = pagtosAux.OrderBy(f => f.MesAno).ToList();
             return pagtosAux;
         }
 
