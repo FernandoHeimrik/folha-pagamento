@@ -10,9 +10,7 @@ namespace FolhaPagamento.DAL
     class FuncionarioDAO
     {
         public static List<Funcionario> funcionarios = new List<Funcionario>();
-
-
-        public static bool cadastrarFuncionario(Funcionario f)
+        public static bool CadastrarFuncionario(Funcionario f)
         {
             if(BuscarFuncionarioPorCpf(f.Cpf) != null)
             {
@@ -34,8 +32,7 @@ namespace FolhaPagamento.DAL
             return null;
         }
 
-
-        public static List<Funcionario> retornaFuncionarios()
+        public static List<Funcionario> RetornaFuncionarios()
         {
             return funcionarios;
         }

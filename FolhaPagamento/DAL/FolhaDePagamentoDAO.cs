@@ -10,9 +10,7 @@ namespace FolhaPagamento.DAL
     class FolhaDePagamentoDAO
     {
         public static List<FolhaDePagamento> pagtos = new List<FolhaDePagamento>();
-
-
-        public static bool cadastrarFolhaDePagamento(FolhaDePagamento pgto)
+        public static bool CadastrarFolhaDePagamento(FolhaDePagamento pgto)
         {
             if (ConsultarFolhaDePagamento(pgto.Funcionario.Cpf, pgto.MesAno.Month, pgto.MesAno.Year) != null)
             {
@@ -75,11 +73,9 @@ namespace FolhaPagamento.DAL
             return pagtosAux;
         }
 
-        public static List<FolhaDePagamento> retornaFolhasDePagamentos()
+        public static List<FolhaDePagamento> RetornaFolhasDePagamentos()
         {
             return pagtos;
         }
-
-
     }
 }

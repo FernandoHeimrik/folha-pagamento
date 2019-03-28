@@ -27,7 +27,7 @@ namespace FolhaPagamento.View
                 c = CargoDAO.BuscarCargoPeloNome(c.Nome);
                 if ( c != null)
                 {
-                    fp.Funcionario.Cargo = c;
+                    fp.Cargo = c;
                     Console.WriteLine("Mes e ano: MM/yyyy");
                     fp.MesAno = Convert.ToDateTime(Console.ReadLine());
                     Console.WriteLine("informe o numero de Horas Trabalhadas: ");
@@ -35,7 +35,7 @@ namespace FolhaPagamento.View
                     Console.WriteLine("Informe o valor da hora: ");
 
                     fp.ValorHora = Convert.ToDouble(Console.ReadLine());
-                    if (FolhaDePagamentoDAO.cadastrarFolhaDePagamento(fp))
+                    if (FolhaDePagamentoDAO.CadastrarFolhaDePagamento(fp))
                     {
                         Console.WriteLine("Folha de Pagamento Cadastrada");
                     }

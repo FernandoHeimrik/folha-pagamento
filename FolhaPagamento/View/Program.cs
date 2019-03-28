@@ -12,7 +12,9 @@ namespace FolhaPagamento.View
         {
             Console.BackgroundColor = ConsoleColor.DarkBlue;
             Console.ForegroundColor = ConsoleColor.White;
+
             string op = "";
+
             do
             {
                 Menu.Renderizar();

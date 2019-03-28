@@ -25,28 +25,18 @@ namespace FolhaPagamento.View
             {
                 Console.WriteLine("Informe a Data de Nascimento: dd/MM/yyyy");
                 f.Nascimento = Convert.ToDateTime(Console.ReadLine());
-                Console.WriteLine("informe o Cargo: ");
-                c.Nome = Console.ReadLine().ToUpper();
-                c = CargoDAO.BuscarCargoPeloNome(c.Nome);
-                if ( c != null)
+
+                if (FuncionarioDAO.CadastrarFuncionario(f))
                 {
-                    f.Cargo = c;
-                    if (FuncionarioDAO.cadastrarFuncionario(f))
-                    {
-                        Console.WriteLine("Funcionário Cadastrado com Sucesso!");
-                        foreach (var item in FuncionarioDAO.retornaFuncionarios())
-                        {
-                            Console.WriteLine(item);
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Funcionario já cadastrado!!");
-                    }
+                    Console.WriteLine("Funcionário Cadastrado com Sucesso!");
+                    //foreach (var item in FuncionarioDAO.RetornaFuncionarios())
+                    //{
+                    //    Console.WriteLine(item);
+                    //}
                 }
                 else
                 {
-                    Console.WriteLine("Cargo não encontrado");
+                    Console.WriteLine("Funcionario já cadastrado!!");
                 }
             }
             else

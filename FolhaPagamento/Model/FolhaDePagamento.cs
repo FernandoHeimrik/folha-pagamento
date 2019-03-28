@@ -16,13 +16,7 @@ namespace FolhaPagamento.Model
 
         public DateTime MesAno  { get; set; }
 
-        //public override string ToString()
-        //{
-        //    return "Funcionario:  " + Funcionario.Nome + " | Cargo: " + Funcionario.Cargo.Nome +
-        //        " |Mês: " + MesAno.Month + " | Ano: " + MesAno.Year + " | Horas Trabalhadas: " + HorasTrabalhadas + " | Valor Hora: " + ValorHora;
-
-        //}
-
+        public Cargo Cargo { get; set; }
 
     }
 }

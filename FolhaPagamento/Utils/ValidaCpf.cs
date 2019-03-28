@@ -37,7 +37,6 @@ namespace FolhaPagamento.Utils
             char[] vetor = cpf.ToCharArray();
             int peso = 10, multiplicacao, somatorio = 0, resto, digito1, digito2;
 
-            //Digito 1
             for (int i = 0; i < 9; i++)
             {
                 multiplicacao = Convert.ToInt32(vetor[i].ToString()) * peso;
@@ -53,11 +52,10 @@ namespace FolhaPagamento.Utils
             {
                 digito1 = 11 - resto;
             }
-            //Console.WriteLine("Digito 1: " + digito1);
 
             peso = 11;
             somatorio = 0;
-            //Digito 2
+
             for (int i = 0; i < 10; i++)
             {
                 multiplicacao = Convert.ToInt32(vetor[i].ToString()) * peso;
@@ -73,9 +71,7 @@ namespace FolhaPagamento.Utils
             {
                 digito2 = 11 - resto;
             }
-            //Console.WriteLine("Digito 2: " + digito2);
-
-
+            
             if (Convert.ToInt32(vetor[9].ToString()) == digito1 &&
                 Convert.ToInt32(vetor[10].ToString()) == digito2)
             {
@@ -85,7 +81,6 @@ namespace FolhaPagamento.Utils
             {
                 return false;
             }
-
         }
     }
 }

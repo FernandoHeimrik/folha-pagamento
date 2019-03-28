@@ -24,10 +24,10 @@ namespace FolhaPagamento.View
             if (CargoDAO.CadastrarCargo(c))
             {
                 Console.WriteLine("Cargo cadastrado com sucesso!");
-                foreach (var item in CargoDAO.retornaCargos())
-                {
-                    Console.WriteLine(item);
-                }
+                //foreach (var item in CargoDAO.RetornaCargos())
+                //{
+                //    Console.WriteLine(item);
+                //}
             }
             else
             {

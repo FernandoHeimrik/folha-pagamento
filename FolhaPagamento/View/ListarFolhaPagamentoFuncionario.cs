@@ -26,26 +26,24 @@ namespace FolhaPagamento.View
                 {
                     Console.WriteLine("\n");
                     Console.WriteLine("Nome do funcionário: " + pgtosCadastradas.Funcionario.Nome);
-                    Console.WriteLine("Cargo: " + pgtosCadastradas.Funcionario.Cargo.Nome);
+                    Console.WriteLine("Cargo: " + pgtosCadastradas.Cargo.Nome);
                     Console.WriteLine("Data da folha de pagamento: " + pgtosCadastradas.MesAno.ToString("MM/yyyy"));
                     Console.WriteLine("Salário Bruto: " + Calculos.SalarioBruto(pgtosCadastradas.HorasTrabalhadas, pgtosCadastradas.ValorHora).ToString("C2"));
                     Console.WriteLine("Imposto de Renda: " + Calculos.ImpostoDeRenda(pgtosCadastradas.HorasTrabalhadas, pgtosCadastradas.ValorHora).ToString("C2"));
                     Console.WriteLine("INSS: " + Calculos.INSS(pgtosCadastradas.HorasTrabalhadas, pgtosCadastradas.ValorHora).ToString("C2"));
                     Console.WriteLine("FGTS: " + Calculos.FGTS(pgtosCadastradas.HorasTrabalhadas, pgtosCadastradas.ValorHora).ToString("C2"));
-                    Console.WriteLine("Bônus: " + Calculos.Bonus(pgtosCadastradas.Funcionario.Cargo.Bonus, pgtosCadastradas.HorasTrabalhadas, pgtosCadastradas.ValorHora).ToString("C2"));
+                    Console.WriteLine("Bônus: " + Calculos.Bonus(pgtosCadastradas.Cargo.Bonus, pgtosCadastradas.HorasTrabalhadas, pgtosCadastradas.ValorHora).ToString("C2"));
                     Console.WriteLine("Salário Líquido: " + (Calculos.SalarioBruto(pgtosCadastradas.HorasTrabalhadas, pgtosCadastradas.ValorHora) -
                         Calculos.ImpostoDeRenda(pgtosCadastradas.HorasTrabalhadas, pgtosCadastradas.ValorHora) -
                         Calculos.INSS(pgtosCadastradas.HorasTrabalhadas, pgtosCadastradas.ValorHora)).ToString("C2"));
                     total += Calculos.SalarioBruto(pgtosCadastradas.HorasTrabalhadas, pgtosCadastradas.ValorHora);
                 }
-                
                 Console.WriteLine("\t\tTotal Salário: " +total.ToString("C2"));
             }
             else
             {
                 Console.WriteLine("Funcionário não encontrado");
             }
-
         }
     }
 }

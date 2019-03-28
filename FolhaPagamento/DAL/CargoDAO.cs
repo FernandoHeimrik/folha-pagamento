@@ -14,24 +14,12 @@ namespace FolhaPagamento.DAL
 
         public static bool CadastrarCargo(Cargo c)
         {
-            //foreach (Cargo cargosCadastrados in cargos)
-            //{
-            //    if (cargosCadastrados.Nome.Equals(c.Nome))
-            //    {
-            //        return false;
-            //    }
-            //}
-            //cargos.Add(c);
-            //return true;
-
             if (BuscarCargoPeloNome(c.Nome) != null)
             {
                 return false;
             }
-
             cargos.Add(c);
             return true;
-
         }
 
         public static Cargo BuscarCargoPeloNome(string nome)
@@ -46,7 +34,7 @@ namespace FolhaPagamento.DAL
             return null;
         }
 
-        public static List<Cargo> retornaCargos()
+        public static List<Cargo> RetornaCargos()
         {
             return cargos;
         }
